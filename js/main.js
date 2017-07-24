@@ -18,7 +18,11 @@ let game = {
     defenders : [],
     levelCount : 0,
     levelSpeed : 1,
-    iteratorId : 0
+    iteratorId : 0,
+    clickPicker: 0,//new
+    clickBall : null,
+    buttons: [],
+    mouseUp : {}
 };
 
 let GameConst = {
@@ -34,12 +38,110 @@ let GameConst = {
     height : 700,
     attackerRadius : 150,
     defenderRadius : 150,
-    defenderSlowDown : 1,
+    defenderSlowDown : 0.04,
     attackerCollRadius : 20,
     defenderCollRadius : 20,
     scale : 1,
     minScale : 0.5
 };
+
+function Bullet(x, y, team, hp, theta, speed) {
+    this.x = x;
+    this.y = y;
+    this.team = team;
+    this.hp = hp;
+    this.angle = theta;
+    this.speed = speed;
+
+    this.r = this.getRadius();
+    game.bullets.push(this);
+
+
+}
+Bullet.prototype.getRadius = function () {
+
+    return Math.max(this.hp / 2.7, 10);
+};
+Bullet.prototype.update = function () {
+    this.x += this.speed * Math.cos(this.angle);
+    this.y += this.speed * Math.sin(this.angle);
+    this.r = this.getRadius();
+    if(this.x - this.r <= 0)
+    {
+        this.angle = Math.PI - this.angle;
+        this.x = this.r;
+    }
+    else if(this.x + this.r >= GameConst.width) {
+        this.angle = Math.PI - this.angle;
+        this.x = GameConst.width - this.r;
+    }
+    if(this.y - this.r <= 0)
+    {
+        this.angle = 2 * Math.PI - this.angle;
+        this.y = this.r;
+    }
+    else if(this.y + this.r >= GameConst.height) {
+        this.angle = 2 * Math.PI - this.angle;
+        this.y = GameConst.height - this.r;
+    }
+
+    for(let ball of game.balls) {
+        if(this.hp <= 0)
+            break;
+        if ((this.x - ball.x) * (this.x - ball.x) + (this.y - ball.y) * (this.y - ball.y) <=
+            (this.r + ball.r) * (this.r + ball.r)) {
+            this.hp -= 2;
+            ball.translate(2, this.team);
+            this.r = this.getRadius();
+            redrawBall(ball);
+        }
+    }
+    for(let attacker of game.attackers) {
+        if(this.hp <= 0)
+            break;
+        if ((this.x - attacker.x) * (this.x - attacker.x) + (this.y - attacker.y) * (this.y - attacker.y) <=
+            (this.r + GameConst.attackerCollRadius) * (this.r + GameConst.attackerCollRadius)) {
+            this.hp -= 2;
+            attacker.translate(2, this.team);
+            this.r = this.getRadius();
+
+        }
+    }
+    for(let defender of game.defenders) {
+        if(this.hp <= 0)
+            break;
+        if ((this.x - defender.x) * (this.x - defender.x) + (this.y - defender.y) * (this.y - defender.y) <=
+            (this.r + GameConst.defenderCollRadius) * (this.r + GameConst.defenderCollRadius)) {
+            this.hp -= 2;
+            defender.translate(2, this.team);
+            this.r = this.getRadius();
+        }
+    }
+
+    drawAttackers();
+    drawDefenders();
+    for(let bullet of game.bullets) {
+        if(this.hp <= 0)
+            break;
+        if ((this.x - bullet.x) * (this.x - bullet.x) + (this.y - bullet.y) * (this.y - bullet.y) <=
+            (this.r + bullet.r) * (this.r + bullet.r) && this.team !== bullet.team) {
+            this.hp -= 1;
+            bullet.hp -= 1;
+            this.r = this.getRadius();
+            bullet.r = bullet.getRadius();
+
+        }
+    }
+    let l = game.bullets.length;
+    for(let i = 0; i < l; i++) {
+        if(game.bullets[i].hp <= 0) {
+            game.bullets.splice(i, 1);
+            i--;
+            l--;
+        }
+    }
+};
+
 
 function Ball(x, y, quality, team, curHp, autoAttackStyle) {
     this.x = x;
@@ -144,104 +246,11 @@ Ball.prototype.translate = function (hp, team) {
 Ball.prototype.attack = function (theta) {
     if(this.hp <= 1)
         return;
-    new Bullet(this.x, this.y, this.team, this.hp / 2, theta, GameConst.bulletSpeed);
-    this.hp /= 2;
-};
-
-
-function Bullet(x, y, team, hp, theta, speed) {
-    this.x = x;
-    this.y = y;
-    this.team = team;
-    this.hp = hp;
-    this.angle = theta;
-    this.speed = speed;
-
-    this.r = this.getRadius();
-    game.bullets.push(this);
-
-
-}
-Bullet.prototype.getRadius = function () {
-
-    return Math.max(this.hp / 3, 10);
-};
-Bullet.prototype.update = function () {
-    this.x += this.speed * Math.cos(this.angle);
-    this.y += this.speed * Math.sin(this.angle);
-    this.r = this.getRadius();
-    if(this.x - this.r <= 0)
-    {
-        this.angle = Math.PI - this.angle;
-        this.x = this.r;
-    }
-    else if(this.x + this.r >= GameConst.width) {
-        this.angle = Math.PI - this.angle;
-        this.x = GameConst.width - this.r;
-    }
-    if(this.y - this.r <= 0)
-    {
-        this.angle = 2 * Math.PI - this.angle;
-        this.y = this.r;
-    }
-    else if(this.y + this.r >= GameConst.height) {
-        this.angle = 2 * Math.PI - this.angle;
-        this.y = GameConst.height - this.r;
-    }
-
-    for(let ball of game.balls) {
-        if(this.hp <= 0)
-            break;
-        if ((this.x - ball.x) * (this.x - ball.x) + (this.y - ball.y) * (this.y - ball.y) <=
-            (this.r + ball.r) * (this.r + ball.r)) {
-            this.hp -= 2;
-            ball.translate(2, this.team);
-            this.r = this.getRadius();
-            redrawBall(ball);
-        }
-    }
-    for(let attacker of game.attackers) {
-        if(this.hp <= 0)
-            break;
-        if ((this.x - attacker.x) * (this.x - attacker.x) + (this.y - attacker.y) * (this.y - attacker.y) <=
-            (this.r + GameConst.attackerCollRadius) * (this.r + GameConst.attackerCollRadius)) {
-            this.hp -= 2;
-            attacker.translate(2, this.team);
-            this.r = this.getRadius();
-
-        }
-    }
-    for(let defender of game.defenders) {
-        if(this.hp <= 0)
-            break;
-        if ((this.x - defender.x) * (this.x - defender.x) + (this.y - defender.y) * (this.y - defender.y) <=
-            (this.r + GameConst.defenderCollRadius) * (this.r + GameConst.defenderCollRadius)) {
-            this.hp -= 2;
-            defender.translate(2, this.team);
-            this.r = this.getRadius();
-        }
-    }
-
-    for(let bullet of game.bullets) {
-        if(this.hp <= 0)
-            break;
-        if ((this.x - bullet.x) * (this.x - bullet.x) + (this.y - bullet.y) * (this.y - bullet.y) <=
-            (this.r + bullet.r) * (this.r + bullet.r) && this.team !== bullet.team) {
-            this.hp -= 1;
-            bullet.hp -= 1;
-            this.r = this.getRadius();
-            bullet.r = bullet.getRadius();
-
-        }
-    }
-    let l = game.bullets.length;
-    for(let i = 0; i < l; i++) {
-        if(game.bullets[i].hp <= 0) {
-            game.bullets.splice(i, 1);
-            i--;
-            l--;
-        }
-    }
+    let bullet = new Bullet(this.x, this.y, this.team, parseInt(this.curHp / 2), theta, GameConst.bulletSpeed);
+    bullet.x = bullet.x + (this.r + bullet.r + 1) * Math.cos(theta);
+    bullet.y = bullet.y + (this.r + bullet.r + 1) * Math.sin(theta);
+    this.curHp = parseInt(this.curHp / 2);
+    redrawBall(this);
 };
 
 
@@ -312,15 +321,26 @@ Defender.prototype.update = function() {
     for(let bullet of game.bullets) {
         if((this.x - bullet.x) * (this.x - bullet.x) + (this.y - bullet.y) * (this.y - bullet.y) <=
             (GameConst.defenderRadius + bullet.r) * (GameConst.defenderRadius + bullet.r)) {
-
-            bullet.translate(3, this.team);
-            bullet.speed -= GameConst.defenderSlowDown;
+            if(this.team === bullet.team)
+                continue;
+            bullet.hp -= 3;
+            if(bullet.speed > 0)
+                bullet.speed -= GameConst.defenderSlowDown;
             drawThunder(this.x, this.y, bullet.x, bullet.y, this.team);
             this.hp -= 1;
             if(this.hp <= 0)
                 break;
         }
 
+    }
+    let l = game.bullets.length;
+
+    for(let i = 0; i < l; i++) {
+        if(game.bullets[i].hp <= 0) {
+            game.bullets.splice(i, 1);
+            i--;
+            l--;
+        }
     }
 
     if(this.hp <= 0) {
@@ -346,8 +366,27 @@ Defender.prototype.translate = function (hp, team) {
 };
 
 
+function Button(x, y, width, height, text, func){
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.text = text;
+    this.func = func;
+    game.buttons.push(this);
+}
+Button.prototype.work = function(ball){
+    switch(this.func)//记得判断ball = null
+    {
+        case 0://暂停
+            break;
+        default:
+            break;
+    }
+};
+
 function resize() {
-    let width = Math.min(document.body.clientWidth * 0.9, document.body.clientHeight / GameConst.hwRate);
+    let width = Math.min(document.body.clientWidth * 0.9, document.body.clientHeight * 0.8 / GameConst.hwRate);
     GameConst.scale = width / GameConst.width;
     if(GameConst.scale < GameConst.minScale)
         GameConst.scale = GameConst.minScale;
@@ -356,7 +395,7 @@ function resize() {
     drawAttackers();
     drawDefenders();
     clearThunders();
-
+    drawButtons();
 
 }
 window.onresize = resize;
@@ -376,7 +415,6 @@ function levelInit(level) {
 
 function update() {
     game.levelCount++;
-
     if(game.levelCount % parseInt(120 / game.levelSpeed) === 0) {
         for(let ball of game.balls) {
             ball.update();
@@ -399,11 +437,13 @@ function update() {
     else if(game.levelCount % parseInt(80 / game.levelSpeed) === 2) {
         clearThunders();
     }
-
-    for(let bullet of game.bullets) {
-        bullet.update();
-        drawBullets();
+    for(let i = 0; i < game.levelSpeed; i++) {
+        for(let bullet of game.bullets) {
+            bullet.update();
+            drawBullets();
+        }
     }
+
     game.iteratorId = window.requestAnimationFrame(update);
 }
 
@@ -411,8 +451,8 @@ function drawBalls() {
     let can = document.getElementById('balls');
     let ctx = can.getContext('2d');
 
-    can.width = GameConst.width;
-    can.height = GameConst.height;
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
 
     for(let ball of game.balls) {
         ctx.fillStyle = GameConst.teamColor[ball.team];
@@ -461,8 +501,8 @@ function drawBullets() {
     let can = document.getElementById('bullets');
     let ctx = can.getContext('2d');
 
-    can.width = GameConst.width;
-    can.height = GameConst.height;
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
 
     for(let bullet of game.bullets) {
         ctx.strokeStyle = GameConst.teamColor[bullet.team];
@@ -481,8 +521,8 @@ function drawAttackers() {
     let can = document.getElementById('attackers');
     let ctx = can.getContext('2d');
 
-    can.width = GameConst.width;
-    can.height = GameConst.height;
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
     for(let attacker of game.attackers) {
         ctx.strokeStyle = '#414141';
         ctx.lineWidth = GameConst.attackerCollRadius * GameConst.scale * 0.1;
@@ -500,8 +540,8 @@ function drawDefenders() {
     let can = document.getElementById('defenders');
     let ctx = can.getContext('2d');
 
-    can.width = GameConst.width;
-    can.height = GameConst.height;
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
 
     for(let defender of game.defenders) {
         ctx.strokeStyle = '#414141';
@@ -565,10 +605,29 @@ function clearThunders() {
     let can = document.getElementById('thunder');
     let ctx = can.getContext('2d');
 
-    can.width = GameConst.width;
-    can.height = GameConst.height;
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
 }
 
+function drawButtons() {
+    let can = document.getElementById('buttons');
+    let ctx = can.getContext('2d');
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * 6 / 5  * GameConst.scale;
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(0,can.height, can.width, can.height / 6);
+    for (let button of game.buttons)
+    {
+        ctx.beginPath();
+        ctx.fillStyle = "#0000FF";
+        ctx.moveTo(button.x * GameConst.scale, button.y * GameConst.scale);
+        ctx.strokeRect(button.x * GameConst.scale, button.y*GameConst.scale, button.width * GameConst.scale, button.height * GameConst.scale);
+        ctx.stroke();
+        ctx.font =(button.y * GameConst.scale * 0.5).toString() + 'px';
+        ctx.fillText(button.text, button.x * GameConst.scale, button.y * GameConst.scale);
+
+    }
+}
 
 new Ball(100, 100, 2, 2, 1, 0);
 new Ball(500, 500, 2, 2, 150, 0);
@@ -586,5 +645,46 @@ new Defender(100,500,100,null);
 //drawDefenders();
 clearThunders();
 //drawThunder(100, 300, 100, 100, 1);
+new Button(300, 300, 30, 30, "1", 1);
+drawButtons();
 
 game.iteratorId = requestAnimationFrame(update);
+
+document.onmousedown = function(event){
+    let e = event || window.event;
+    //菜单判断 game.clickPicker = 2, return
+    for(let button in game.buttons)
+    {
+        if(e.clientX > button.x * GameConst.scale && e.clientX < (button.x + button.width)* GameConst.scale && e.clientY > button.y * GameConst.scale && e.clientY < (button.y + button.width)*GameConst.scale)
+        {
+            button.work(game.clickBall);
+            return;
+        }
+    }
+    game.clickPicker = 0;//清空选中
+    game.clickBall = null;
+    for(let ball of game.balls) {
+        if((e.clientX - ball.x * GameConst.scale) * (e.clientX - ball.x * GameConst.scale) + (e.clientY - ball.y * GameConst.scale)*(e.clientY - ball.y * GameConst.scale) <= ball.r * ball.r*GameConst.scale *GameConst.scale)
+        {
+            game.clickPicker = 1;
+            game.clickBall = ball;
+            return;
+        }
+    }
+};
+
+document.onmouseup = function(event){
+    let e = event || window.event;
+    if(game.clickPicker === 1)
+    {
+        game.mouseUp.x = e.clientX / GameConst.scale;
+        game.mouseUp.y = e.clientY / GameConst.scale;
+        if(game.clickBall !== null && game.clickBall.team === 1 && ((game.clickBall.x - game.mouseUp.x)*(game.clickBall.x - game.mouseUp.x) + (game.clickBall.y - game.mouseUp.y)*(game.clickBall.y - game.mouseUp.y) > game.clickBall.r*game.clickBall.y))
+        {
+            game.clickBall.attack(game.clickBall.getAngle(game.mouseUp));
+            console.log(game.clickBall.getAngle(game.mouseUp));
+
+        }
+
+    }
+};
