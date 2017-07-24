@@ -42,7 +42,8 @@ let GameConst = {
     attackerCollRadius : 20,
     defenderCollRadius : 20,
     scale : 1,
-    minScale : 0.5
+    minScale : 0.5,
+    arrowLength : 15,
 };
 
 function Bullet(x, y, team, hp, theta, speed) {
@@ -380,10 +381,43 @@ Button.prototype.work = function(ball){
     {
         case 0://暂停
             break;
+        case 1:
+            game.levelSpeed = 1;
+            break;
+        case 2:
+            game.levelSpeed = 2;
+            break;
+        case 3:
+            game.levelSpeed = 3;
+        case 4:
+            if(ball != null)
+                ball.levelUp();
+            break;
+        case 5: //不作为
+            if(ball != null)
+                ball.autoAttackStyle = 0;
+            break;
+        case 6: //攻击
+            if(ball != null)
+                ball.autoAttackStyle = 1;
+            break;
+        case 7: //防御
+            if(ball != null)
+                ball.autoAttackStyle = 2;
+            break;
+        case 8:
+            if(ball != null)
+            {
+                for(let mball of game.balls)
+                {
+                    mball.autoAttackStyle = ball.autoAttackStyle;
+                }
+            }
+            break;
         default:
             break;
     }
-};
+}
 
 function resize() {
     let width = Math.min(document.body.clientWidth * 0.9, document.body.clientHeight * 0.8 / GameConst.hwRate);
@@ -411,6 +445,15 @@ function levelInit(level) {
         default:
             break;
     }
+    new Button(60, GameConst.height + 60, 60, 30, "一倍速", 1);
+    new Button(60 * 3, GameConst.height + 60, 60, 30, "二倍速", 2);
+    new Button(60 * 5, GameConst.height + 60, 60, 30, "三倍速", 3);
+    new Button(60 * 7, GameConst.height + 60, 60, 30, "升级", 4);
+    new Button(60, GameConst.height + 60 * 3, 60, 30, "攻击策略", -1);
+    new Button(60 * 3, GameConst.height + 60 * 3, 60, 30, "温和", 5);
+    new Button(60 * 5, GameConst.height + 60 * 3, 60, 30, "侵略", 6);
+    new Button(60 * 7, GameConst.height + 60 * 3, 60, 30, "保守", 7);
+    new Button(60 * 9, GameConst.height + 60 * 3, 60, 30, "全部应用", 8);
 }
 
 function update() {
@@ -609,22 +652,65 @@ function clearThunders() {
     can.height = GameConst.height * GameConst.scale;
 }
 
+function drawArrow(ball, x, y) {
+    let can = document.getElementById('arrow');
+    let ctx = can.getContext('2d');
+
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
+
+    ctx.globalAlpha = 0.7;
+    ctx.fillStyle = GameConst.teamColor[1];
+    let target = {x: x, y : y};
+    let theta = ball.getAngle(target);
+    let center = {x: ball.x, y : ball.y};
+
+    for (let i = 0; i < 3; i++) {
+        center.x = ball.x + i * 1.5 * GameConst.arrowLength * Math.cos(theta);
+        center.y = ball.y + i * 1.5 * GameConst.arrowLength * Math.sin(theta);
+
+        ctx.beginPath();
+        ctx.moveTo((center.x + ball.r * Math.cos(theta - Math.PI / 15)) * GameConst.scale, (center.y + ball.r * Math.sin(theta - Math.PI / 15)) * GameConst.scale);
+        ctx.arc(center.x * GameConst.scale, center.y * GameConst.scale, ball.r * GameConst.scale, theta - Math.PI / 15, theta + Math.PI / 15, false);
+        ctx.lineTo((center.x + ball.r * Math.cos(theta + Math.PI / 15) + GameConst.arrowLength * Math.cos(theta)) * GameConst.scale,
+            (center.y + ball.r * Math.sin(theta + Math.PI / 15) + GameConst.arrowLength * Math.sin(theta)) * GameConst.scale);
+        ctx.lineTo((center.x + (ball.r + GameConst.arrowLength * 1.2) * Math.cos(theta)) * GameConst.scale, (center.y + (ball.r + GameConst.arrowLength * 1.2) * Math.sin(theta)) * GameConst.scale);
+        ctx.lineTo((center.x + ball.r * Math.cos(theta - Math.PI / 15) + GameConst.arrowLength * Math.cos(theta)) * GameConst.scale,
+            (center.y + ball.r * Math.sin(theta - Math.PI / 15) + GameConst.arrowLength * Math.sin(theta)) * GameConst.scale);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+
+
+
+
+}
+function clearArrow() {
+    let can = document.getElementById('arrow');
+    let ctx = can.getContext('2d');
+
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
+}
+
 function drawButtons() {
     let can = document.getElementById('buttons');
     let ctx = can.getContext('2d');
-    can.width = GameConst.width * GameConst.scale;
-    can.height = GameConst.height * 6 / 5  * GameConst.scale;
-    ctx.fillStyle = "#000000";
-    ctx.fillRect(0,can.height, can.width, can.height / 6);
+    can.width = GameConst.width;
+    can.height = GameConst.height * 6 / 5;
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0,can.height * 5 / 6, can.width, can.height / 6);
+
     for (let button of game.buttons)
     {
         ctx.beginPath();
         ctx.fillStyle = "#0000FF";
-        ctx.moveTo(button.x * GameConst.scale, button.y * GameConst.scale);
+        ctx.moveTo(button.x * GameConst.scale, button.y*GameConst.scale);
         ctx.strokeRect(button.x * GameConst.scale, button.y*GameConst.scale, button.width * GameConst.scale, button.height * GameConst.scale);
         ctx.stroke();
-        ctx.font =(button.y * GameConst.scale * 0.5).toString() + 'px';
-        ctx.fillText(button.text, button.x * GameConst.scale, button.y * GameConst.scale);
+        ctx.font =(button.height * GameConst.scale * 0.5).toString() + 'px';;
+        ctx.fillText(button.text, (button.x +button.width * 0.3) * GameConst.scale, (button.y + button.height * 0.6)*GameConst.scale);
 
     }
 }
@@ -666,15 +752,23 @@ document.onmousedown = function(event){
     for(let ball of game.balls) {
         if((e.clientX - ball.x * GameConst.scale) * (e.clientX - ball.x * GameConst.scale) + (e.clientY - ball.y * GameConst.scale)*(e.clientY - ball.y * GameConst.scale) <= ball.r * ball.r*GameConst.scale *GameConst.scale)
         {
+            document.onmousemove = function(event){
+                let e = event || window.event;
+                drawArrow(ball, e.clientX / GameConst.scale, e.clientY / GameConst.scale);
+
+            };
             game.clickPicker = 1;
             game.clickBall = ball;
             return;
         }
     }
+
 };
 
 document.onmouseup = function(event){
     let e = event || window.event;
+    document.onmousemove =null;
+    clearArrow();
     if(game.clickPicker === 1)
     {
         game.mouseUp.x = e.clientX / GameConst.scale;
@@ -682,9 +776,9 @@ document.onmouseup = function(event){
         if(game.clickBall !== null && game.clickBall.team === 1 && ((game.clickBall.x - game.mouseUp.x)*(game.clickBall.x - game.mouseUp.x) + (game.clickBall.y - game.mouseUp.y)*(game.clickBall.y - game.mouseUp.y) > game.clickBall.r*game.clickBall.y))
         {
             game.clickBall.attack(game.clickBall.getAngle(game.mouseUp));
-            console.log(game.clickBall.getAngle(game.mouseUp));
 
         }
 
     }
 };
+resize();
