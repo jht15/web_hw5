@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f77aa16a-4039-4b84-bea7-31cfc9af4cf4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
@@ -22,8 +23,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -32,40 +33,49 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/test.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="756" column="35" lean-forward="false" selection-start-line="756" selection-start-column="35" selection-end-line="756" selection-end-column="35" />
+            <state relative-caret-position="-398">
+              <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
               <folding>
+                <element signature="e#67#498#0" expanded="false" />
+                <element signature="e#517#1232#0" expanded="false" />
                 <element signature="n#!!block;n#Bullet#0" expanded="false" />
-                <element signature="e#1310#1354#0" expanded="false" />
-                <element signature="e#1394#3913#0" expanded="false" />
+                <element signature="e#1509#1553#0" expanded="false" />
+                <element signature="e#1593#4112#0" expanded="false" />
                 <element signature="n#!!block;n#Ball#0" expanded="false" />
-                <element signature="e#4370#5872#0" expanded="false" />
-                <element signature="e#5917#6402#0" expanded="false" />
-                <element signature="e#6440#6730#0" expanded="false" />
-                <element signature="e#6769#6907#0" expanded="false" />
-                <element signature="e#6956#7236#0" expanded="false" />
-                <element signature="e#7279#7634#0" expanded="false" />
+                <element signature="e#4569#7522#0" expanded="false" />
+                <element signature="e#7567#8052#0" expanded="false" />
+                <element signature="e#8090#8380#0" expanded="false" />
+                <element signature="e#8419#8699#0" expanded="false" />
+                <element signature="e#8748#9194#0" expanded="false" />
+                <element signature="e#9237#9592#0" expanded="false" />
                 <element signature="n#!!block;n#Attacker#0" expanded="false" />
-                <element signature="e#7839#8446#0" expanded="false" />
-                <element signature="e#8499#8769#0" expanded="false" />
+                <element signature="e#9797#10404#0" expanded="false" />
+                <element signature="e#10457#10727#0" expanded="false" />
                 <element signature="n#!!block;n#Defender#0" expanded="false" />
-                <element signature="e#8973#9910#0" expanded="false" />
-                <element signature="e#9963#10233#0" expanded="false" />
+                <element signature="e#10931#11868#0" expanded="false" />
+                <element signature="e#11921#12191#0" expanded="false" />
                 <element signature="n#!!block;n#Button#0" expanded="false" />
-                <element signature="e#10482#11465#0" expanded="false" />
+                <element signature="e#12537#14770#0" expanded="false" />
                 <element signature="n#!!block;n#resize#0" expanded="false" />
-                <element signature="n#!!block;n#gameInit#0" expanded="false" />
                 <element signature="n#!!block;n#update#0" expanded="false" />
+                <element signature="n#!!block;n#drawBalls#0" expanded="false" />
                 <element signature="n#!!block;n#redrawBall#0" expanded="false" />
                 <element signature="n#!!block;n#drawBullets#0" expanded="false" />
                 <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -74,19 +84,17 @@
                 <element signature="n#!!block;n#clearThunders#0" expanded="false" />
                 <element signature="n#!!block;n#drawArrow#0" expanded="false" />
                 <element signature="n#!!block;n#clearArrow#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/ec8f7c837db028bb1cb45946574fc7f6/Message/MessageTemp/6223fd067a370a7b951b9815f66e799f/File/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="402" column="1" lean-forward="true" selection-start-line="361" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
-              <folding>
-                <element signature="e#9919#10902#0" expanded="false" />
-                <element signature="n#!!block;n#drawThunder#0" expanded="false" />
+                <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+                <element signature="e#29608#33928#0" expanded="false" />
+                <element signature="e#33967#34820#0" expanded="false" />
+                <element signature="e#34844#37316#0" expanded="false" />
+                <element signature="n#!!block;n#levelInit#0" expanded="false" />
+                <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+                <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+                <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+                <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+                <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+                <element signature="n#!!block;n#clearEnd#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -107,6 +115,8 @@
     <findStrings>
       <find>GameConstP</find>
       <find>console</find>
+      <find>clearBackground</find>
+      <find>levelInit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,8 +140,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="196" />
-    <option name="y" value="64" />
+    <option name="x" value="59" />
+    <option name="y" value="118" />
     <option name="width" value="1546" />
     <option name="height" value="834" />
   </component>
@@ -174,21 +184,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hw5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hw5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -322,24 +318,27 @@
       <workItem from="1500827604524" duration="3000" />
       <workItem from="1500875778856" duration="2305000" />
       <workItem from="1500879163507" duration="3144000" />
+      <workItem from="1500882448309" duration="132000" />
+      <workItem from="1500897942891" duration="53000" />
+      <workItem from="1500908477242" duration="15380000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31453000" />
+    <option name="totallyTimeSpent" value="47018000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="196" y="64" width="1546" height="834" extended-state="0" />
+    <frame x="59" y="118" width="1546" height="834" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22380336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31633988" sideWeight="0.095084086" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39738563" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31633988" sideWeight="0.9049159" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -376,11 +375,214 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2445">
+          <caret line="738" column="38" lean-forward="false" selection-start-line="738" selection-start-column="38" selection-end-line="738" selection-end-column="38" />
+          <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
+            <element signature="n#!!block;n#Bullet#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
+            <element signature="n#!!block;n#Attacker#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
+            <element signature="n#!!block;n#Defender#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
+            <element signature="n#!!block;n#Button#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
+            <element signature="n#!!block;n#resize#0" expanded="false" />
+            <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
+            <element signature="n#!!block;n#redrawBall#0" expanded="false" />
+            <element signature="n#!!block;n#drawBullets#0" expanded="false" />
+            <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
+            <element signature="n#!!block;n#drawDefenders#0" expanded="false" />
+            <element signature="n#!!block;n#drawThunder#0" expanded="false" />
+            <element signature="n#!!block;n#clearThunders#0" expanded="false" />
+            <element signature="n#!!block;n#drawArrow#0" expanded="false" />
+            <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/ec8f7c837db028bb1cb45946574fc7f6/Message/MessageTemp/6223fd067a370a7b951b9815f66e799f/File/main.js" />
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="752" column="30" lean-forward="false" selection-start-line="752" selection-start-column="30" selection-end-line="752" selection-end-column="30" />
+          <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
+            <element signature="n#!!block;n#Bullet#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
+            <element signature="n#!!block;n#Attacker#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
+            <element signature="n#!!block;n#Defender#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
+            <element signature="n#!!block;n#Button#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
+            <element signature="n#!!block;n#resize#0" expanded="false" />
+            <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
+            <element signature="n#!!block;n#redrawBall#0" expanded="false" />
+            <element signature="n#!!block;n#drawBullets#0" expanded="false" />
+            <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
+            <element signature="n#!!block;n#drawDefenders#0" expanded="false" />
+            <element signature="n#!!block;n#drawThunder#0" expanded="false" />
+            <element signature="n#!!block;n#clearThunders#0" expanded="false" />
+            <element signature="n#!!block;n#drawArrow#0" expanded="false" />
+            <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/ec8f7c837db028bb1cb45946574fc7f6/Message/MessageTemp/6223fd067a370a7b951b9815f66e799f/File/main.js" />
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11340">
+          <caret line="756" column="35" lean-forward="false" selection-start-line="756" selection-start-column="35" selection-end-line="756" selection-end-column="35" />
+          <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
+            <element signature="n#!!block;n#Bullet#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
+            <element signature="n#!!block;n#Attacker#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
+            <element signature="n#!!block;n#Defender#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
+            <element signature="n#!!block;n#Button#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
+            <element signature="n#!!block;n#resize#0" expanded="false" />
+            <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
+            <element signature="n#!!block;n#redrawBall#0" expanded="false" />
+            <element signature="n#!!block;n#drawBullets#0" expanded="false" />
+            <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
+            <element signature="n#!!block;n#drawDefenders#0" expanded="false" />
+            <element signature="n#!!block;n#drawThunder#0" expanded="false" />
+            <element signature="n#!!block;n#clearThunders#0" expanded="false" />
+            <element signature="n#!!block;n#drawArrow#0" expanded="false" />
+            <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -402,27 +604,29 @@
         <state relative-caret-position="10215">
           <caret line="681" column="66" lean-forward="false" selection-start-line="681" selection-start-column="66" selection-end-line="681" selection-end-column="66" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -431,6 +635,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -456,27 +671,29 @@
         <state relative-caret-position="360">
           <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -485,6 +702,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -510,27 +738,29 @@
         <state relative-caret-position="360">
           <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -539,6 +769,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -564,27 +805,29 @@
         <state relative-caret-position="1140">
           <caret line="372" column="18" lean-forward="false" selection-start-line="372" selection-start-column="18" selection-end-line="372" selection-end-column="18" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -593,6 +836,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -618,27 +872,29 @@
         <state relative-caret-position="7590">
           <caret line="506" column="49" lean-forward="true" selection-start-line="506" selection-start-column="49" selection-end-line="506" selection-end-column="49" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -647,6 +903,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -672,27 +939,29 @@
         <state relative-caret-position="1845">
           <caret line="529" column="16" lean-forward="false" selection-start-line="529" selection-start-column="16" selection-end-line="529" selection-end-column="16" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -701,6 +970,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -726,27 +1006,29 @@
         <state relative-caret-position="1200">
           <caret line="440" column="11" lean-forward="false" selection-start-line="440" selection-start-column="11" selection-end-line="440" selection-end-column="11" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -755,6 +1037,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -780,27 +1073,29 @@
         <state relative-caret-position="1320">
           <caret line="389" column="8" lean-forward="true" selection-start-line="389" selection-start-column="8" selection-end-line="389" selection-end-column="8" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -809,6 +1104,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -834,27 +1140,29 @@
         <state relative-caret-position="270">
           <caret line="285" column="0" lean-forward="false" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -863,6 +1171,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,27 +1207,29 @@
         <state relative-caret-position="615">
           <caret line="165" column="42" lean-forward="false" selection-start-line="165" selection-start-column="42" selection-end-line="165" selection-end-column="42" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -917,64 +1238,88 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css.css" />
-    <entry file="file://$PROJECT_DIR$/css/main.css">
+    <entry file="file://$PROJECT_DIR$/res/res.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/ec8f7c837db028bb1cb45946574fc7f6/Message/MessageTemp/6223fd067a370a7b951b9815f66e799f/File/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="402" column="1" lean-forward="true" selection-start-line="361" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
+        <state relative-caret-position="133">
+          <caret line="861" column="0" lean-forward="false" selection-start-line="861" selection-start-column="0" selection-end-line="994" selection-end-column="1" />
           <folding>
-            <element signature="e#9919#10902#0" expanded="false" />
-            <element signature="n#!!block;n#drawThunder#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#4453#6012#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/test.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="756" column="35" lean-forward="false" selection-start-line="756" selection-start-column="35" selection-end-line="756" selection-end-column="35" />
+        <state relative-caret-position="-398">
+          <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
           <folding>
+            <element signature="e#67#498#0" expanded="false" />
+            <element signature="e#517#1232#0" expanded="false" />
             <element signature="n#!!block;n#Bullet#0" expanded="false" />
-            <element signature="e#1310#1354#0" expanded="false" />
-            <element signature="e#1394#3913#0" expanded="false" />
+            <element signature="e#1509#1553#0" expanded="false" />
+            <element signature="e#1593#4112#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#4370#5872#0" expanded="false" />
-            <element signature="e#5917#6402#0" expanded="false" />
-            <element signature="e#6440#6730#0" expanded="false" />
-            <element signature="e#6769#6907#0" expanded="false" />
-            <element signature="e#6956#7236#0" expanded="false" />
-            <element signature="e#7279#7634#0" expanded="false" />
+            <element signature="e#4569#7522#0" expanded="false" />
+            <element signature="e#7567#8052#0" expanded="false" />
+            <element signature="e#8090#8380#0" expanded="false" />
+            <element signature="e#8419#8699#0" expanded="false" />
+            <element signature="e#8748#9194#0" expanded="false" />
+            <element signature="e#9237#9592#0" expanded="false" />
             <element signature="n#!!block;n#Attacker#0" expanded="false" />
-            <element signature="e#7839#8446#0" expanded="false" />
-            <element signature="e#8499#8769#0" expanded="false" />
+            <element signature="e#9797#10404#0" expanded="false" />
+            <element signature="e#10457#10727#0" expanded="false" />
             <element signature="n#!!block;n#Defender#0" expanded="false" />
-            <element signature="e#8973#9910#0" expanded="false" />
-            <element signature="e#9963#10233#0" expanded="false" />
+            <element signature="e#10931#11868#0" expanded="false" />
+            <element signature="e#11921#12191#0" expanded="false" />
             <element signature="n#!!block;n#Button#0" expanded="false" />
-            <element signature="e#10482#11465#0" expanded="false" />
+            <element signature="e#12537#14770#0" expanded="false" />
             <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#gameInit#0" expanded="false" />
             <element signature="n#!!block;n#update#0" expanded="false" />
+            <element signature="n#!!block;n#drawBalls#0" expanded="false" />
             <element signature="n#!!block;n#redrawBall#0" expanded="false" />
             <element signature="n#!!block;n#drawBullets#0" expanded="false" />
             <element signature="n#!!block;n#drawAttackers#0" expanded="false" />
@@ -983,6 +1328,17 @@
             <element signature="n#!!block;n#clearThunders#0" expanded="false" />
             <element signature="n#!!block;n#drawArrow#0" expanded="false" />
             <element signature="n#!!block;n#clearArrow#0" expanded="false" />
+            <element signature="n#!!block;n#drawButtons#0" expanded="false" />
+            <element signature="e#29608#33928#0" expanded="false" />
+            <element signature="e#33967#34820#0" expanded="false" />
+            <element signature="e#34844#37316#0" expanded="false" />
+            <element signature="n#!!block;n#levelInit#0" expanded="false" />
+            <element signature="n#!!block;n#drawBegin#0" expanded="false" />
+            <element signature="n#!!block;n#clearBegin#0" expanded="false" />
+            <element signature="n#!!block;n#drawBackground#0" expanded="false" />
+            <element signature="n#!!block;n#clearBackground#0" expanded="false" />
+            <element signature="n#!!block;n#drawEnd#0" expanded="false" />
+            <element signature="n#!!block;n#clearEnd#0" expanded="false" />
           </folding>
         </state>
       </provider>
