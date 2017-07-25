@@ -1393,6 +1393,16 @@ function drawBegin() {
     ctx.fillStyle = "#ffd956";
     ctx.font = parseInt(GameConst.width * GameConst.scale * 0.03).toString() +"px sans-serif";
     ctx.fillText("Choose Level :  "+game.level, GameConst.scale * GameConst.width / 3, GameConst.scale * GameConst.height / 3 * 2);
+    ctx.font = parseInt(GameConst.width * GameConst.scale * 0.015).toString() +"px sans-serif";
+    ctx.fillText(" 可能帮到你的小技巧：", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.45);
+    ctx.fillText("* 更大的球有着更高的血量上限", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.5);
+    ctx.fillText("和更快的恢复速度", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.53);
+    ctx.fillText("* 对于野生球可以慢些占领", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.58);
+    ctx.fillText("* 攻击器会影响周围的球", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.63);
+    ctx.fillText("* 防御器会影响周围的子弹", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.68);
+    ctx.fillText("* 可以升级自己的球", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.73);
+    ctx.fillText("* 可以对自己的球设置简单AI", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.78);
+    ctx.fillText("* 可以提高游戏速度", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.83);
     new Button(GameConst.width * 0.52, GameConst.height * 0.56, GameConst.width / 12, GameConst.height / 24, "level up", -1, 1, 'up');
     new Button(GameConst.width * 0.52, GameConst.height * 0.7, GameConst.width / 12, GameConst.height / 24, "level down", -1, 2, 'down');
     new Button(GameConst.width / 12 * 5, GameConst.height / 12 * 9, GameConst.width / 6, GameConst.height / 18, "start", -1, 3, 'play');
