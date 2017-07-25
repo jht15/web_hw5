@@ -502,6 +502,9 @@ Button.prototype.work = function(ball, index){
                 }
             }
             break;
+        case 9:
+            drawBegin();
+            return;
         default:
             break;
     }
@@ -1043,6 +1046,8 @@ document.onmouseup = function(event){
     GameConst.buttonImg.down.src = 'res/down.png';
     GameConst.buttonImg.play = new Image();
     GameConst.buttonImg.play.src = 'res/play.png';
+    GameConst.buttonImg.menu = new Image();
+    GameConst.buttonImg.menu.src = 'res/menu.png';
     GameConst.buttonImg.speed1 = new Image();
     GameConst.buttonImg.speed1.src = 'res/speed1.png';
     GameConst.buttonImg.speed2 = new Image();
@@ -1118,9 +1123,10 @@ function levelInit(level) {
     clearThunders();
     clearBegin();
     clearEnd();
-    new Button(40, GameConst.height + 45, 40, 40, "一倍速", 1, 1, 'speed1Chosen');
-    new Button(40 * 2, GameConst.height + 45, 40, 40, "二倍速", 2, 2, 'speed2');
-    new Button(40 * 3, GameConst.height + 45,  40, 40, "三倍速", 3, 3, 'speed3');
+    new Button(40, GameConst.height + 45, 58, 21, "return", 9, 4, 'menu');
+    new Button(40 * 3, GameConst.height + 45, 40, 40, "一倍速", 1, 1, 'speed1Chosen');
+    new Button(40 * 4, GameConst.height + 45, 40, 40, "二倍速", 2, 2, 'speed2');
+    new Button(40 * 5, GameConst.height + 45,  40, 40, "三倍速", 3, 3, 'speed3');
     new Button(560, GameConst.height + 5, 60, 30, "攻击策略:", -1, 0);
     new Button(560, GameConst.height + 40, 138, 23, "noAI", 5, 0, 'noAIChosen');
 
@@ -1381,6 +1387,27 @@ function levelInit(level) {
 }
 
 function drawBegin() {
+    game.balls = [];
+    game.bullets = [];
+    game.attackers = [];
+    game.defenders = [];
+    game.levelSpeed = 1;
+    game.clickPicker = 0;
+    game.clickBall = null;
+    game.beginFlag = 0;
+    game.buttons = [];
+    game.success = false;
+    game.levelCount = 0;
+
+    drawButtons();
+    clearArrow();
+    drawAttackers();
+    drawBalls();
+    drawBullets();
+    drawDefenders();
+    clearThunders();
+    clearBegin();
+    clearEnd();
     let can = document.getElementById('begin');
     let ctx = can.getContext('2d');
 
