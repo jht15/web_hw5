@@ -458,10 +458,8 @@ Button.prototype.work = function(ball, index){
         case 4:
             if(ball && ball.level < GameConst.maxLevel)
                 ball.levelUp();
-            if(ball.level === GameConst.maxLevel)
-            {
+            if(ball.level >= GameConst.maxLevel)
                 this.num = -1;
-            }
             break;
         case 5: //不作为
             if(ball)
@@ -868,6 +866,12 @@ function drawButtons() {
         return;
     }
     for (let button of game.buttons) {
+        if(button.text === 'upgrade') {
+            if(game.clickBall.level >= GameConst.maxLevel)
+                button.num = -1;
+            else
+                button.num = 0;
+        }
         if(! button.imgName) {
             ctx.fillStyle = "#0000FF";
             if(button.num !== -1) {
@@ -1134,7 +1138,7 @@ function levelInit(level) {
     new Button(560, GameConst.height + 86, 138, 23, "defence", 7, 0,'defence');
     new Button(740, GameConst.height + 38, 74, 78, "全部应用", 8, 0,'applyToAll');
 
-    new Button(875, GameConst.height + 45, 118, 30, "升级", 4, 0, 'levelUp');
+    new Button(875, GameConst.height + 45, 118, 30, "upgrade", 4, 0, 'levelUp');
 
     switch (level) {
         case 1:
