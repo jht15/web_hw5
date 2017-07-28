@@ -54,6 +54,7 @@ let GameConst = {
     maxGameLevel : 18
 };
 
+//类定义
 function Bullet(x, y, team, hp, theta, speed) {
     this.x = x;
     this.y = y;
@@ -510,100 +511,8 @@ Button.prototype.work = function(ball, index){
     drawButtons();
 };
 
-function resize() {
-    let width = Math.min(document.body.clientWidth * 0.9, document.body.clientHeight * 0.8 / GameConst.hwRate);
-    GameConst.scale = width / GameConst.width;
-    if(GameConst.scale < GameConst.minScale)
-        GameConst.scale = GameConst.minScale;
 
-    GameConst.moveX = (document.body.clientWidth - GameConst.width * GameConst.scale) / 2;
-    if(GameConst.moveX < 0)
-        GameConst.moveX = 0;
-    GameConst.moveY = (document.body.clientHeight - GameConst.height * 1.2 * GameConst.scale) / 2;
-    if(GameConst.moveY < 0)
-        GameConst.moveY = 0;
-
-
-    drawBalls();
-    drawBullets();
-    drawAttackers();
-    drawDefenders();
-    clearThunders();
-    drawButtons();
-    drawBackground();
-    if(game.beginFlag === 0)
-        drawBegin();
-    else if(game.beginFlag === 2)
-        drawEnd();
-
-}
-window.onresize = resize;
-
-function update() {
-    game.levelCount++;
-    let isSucceed = true;
-    let isFalse = true;
-    if(game.levelCount % parseInt(120 / game.levelSpeed) === 0) {
-        for(let ball of game.balls) {
-            ball.update();
-            if(ball.team === 1)
-                isFalse = false;
-            if(ball.team !== 1 && ball.team !== 0)
-                isSucceed = false;
-        }
-        if(game.beginFlag === 1 && isSucceed === true)
-        {
-            game.success = true;
-            game.level += 1;
-            if(game.level > GameConst.maxGameLevel)
-                game.level = 1;
-            game.income += 100 * (1 + game.status.isIncomeUpdate);
-            drawEnd();
-            game.iteratorId = window.requestAnimationFrame(update);
-            return;
-        }
-        if(game.beginFlag === 1 && isFalse === true)
-        {
-            game.success = false;
-            drawEnd();
-            game.iteratorId = window.requestAnimationFrame(update);
-            return;
-        }
-        drawBalls();
-
-    }
-
-    if(game.levelCount % parseInt(300 / game.levelSpeed) === 0) {
-        for(let ball of game.balls) {
-            ball.autoAttack();
-        }
-
-
-    }
-    if(game.levelCount % parseInt(80 / game.levelSpeed) === 0) {
-        for(let attacker of game.attackers) {
-            attacker.update();
-        }
-        for(let defender of game.defenders) {
-            defender.update();
-        }
-        drawAttackers();
-        drawDefenders();
-    }
-    else if(game.levelCount % parseInt(80 / game.levelSpeed) === 2) {
-        clearThunders();
-    }
-    for(let i = 0; i < game.levelSpeed; i++) {
-        for(let bullet of game.bullets) {
-            bullet.update();
-            drawBullets();
-        }
-    }
-
-    game.iteratorId = window.requestAnimationFrame(update);
-
-}
-
+//绘制与重绘
 function drawBalls() {
     let can = document.getElementById('balls');
     let ctx = can.getContext('2d');
@@ -893,8 +802,231 @@ function drawButtons() {
 
 }
 
+function drawBegin() {
+    game.balls = [];
+    game.bullets = [];
+    game.attackers = [];
+    game.defenders = [];
+    game.levelSpeed = 1;
+    game.clickPicker = 0;
+    game.clickBall = null;
+    game.beginFlag = 0;
+    game.buttons = [];
+    game.success = false;
+    game.levelCount = 0;
+
+    drawButtons();
+    clearArrow();
+    drawAttackers();
+    drawBalls();
+    drawBullets();
+    drawDefenders();
+    clearThunders();
+    clearBegin();
+    clearEnd();
+    let can = document.getElementById('begin');
+    let ctx = can.getContext('2d');
+
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
+    can.style.left = GameConst.moveX.toString() + 'px';
+    can.style.top = GameConst.moveY.toString() + 'px';
+    ctx.drawImage(GameConst.buttonImg.title, GameConst.width * 0.3 * GameConst.scale, GameConst.height / 12 * 2 * GameConst.scale, 334 * GameConst.scale, 90 * GameConst.scale);
+
+    ctx.fillStyle = "#ffd956";
+    ctx.font = parseInt(GameConst.width * GameConst.scale * 0.03).toString() +"px sans-serif";
+    ctx.fillText("Choose Level :  "+game.level, GameConst.scale * GameConst.width / 3, GameConst.scale * GameConst.height / 3 * 2);
+    ctx.font = parseInt(GameConst.width * GameConst.scale * 0.015).toString() +"px sans-serif";
+    ctx.fillText(" 可能帮到你的小技巧：", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.45);
+    ctx.fillText("* 更大的球有着更高的血量上限", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.5);
+    ctx.fillText("和更快的恢复速度", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.53);
+    ctx.fillText("* 对于野生球可以慢些占领", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.58);
+    ctx.fillText("* 攻击器会影响周围的球", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.63);
+    ctx.fillText("* 防御器会影响周围的子弹", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.68);
+    ctx.fillText("* 可以升级自己的球", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.73);
+    ctx.fillText("* 可以对自己的球设置简单AI", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.78);
+    ctx.fillText("* 可以提高游戏速度", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.83);
+    new Button(GameConst.width * 0.52, GameConst.height * 0.56, GameConst.width / 12, GameConst.height / 24, "level up", -1, 1, 'up');
+    new Button(GameConst.width * 0.52, GameConst.height * 0.7, GameConst.width / 12, GameConst.height / 24, "level down", -1, 2, 'down');
+    new Button(GameConst.width / 12 * 5, GameConst.height / 12 * 9, GameConst.width / 6, GameConst.height / 18, "start", -1, 3, 'play');
+    drawButtons();
+}
+function clearBegin() {
+    let can = document.getElementById('begin');
+    let ctx = can.getContext('2d');
+
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
+}
+
+function drawEnd() {
+    game.balls = [];
+    game.bullets = [];
+    game.attackers = [];
+    game.defenders = [];
+    game.levelSpeed = 1;
+    game.clickPicker = 0;
+    game.clickBall = null;
+    game.beginFlag = 2;
+    game.buttons = [];
+    game.levelCount = 0;
+    drawButtons();
+    clearArrow();
+    drawAttackers();
+    drawBalls();
+    drawBullets();
+    drawDefenders();
+    clearThunders();
+    let can = document.getElementById('end');
+    let ctx = can.getContext('2d');
+
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
+
+
+    can.style.left = GameConst.moveX.toString() + 'px';
+    can.style.top = GameConst.moveY.toString() + 'px';
+    if(game.status.isBoundUpdate === false) {
+        new Button(327, GameConst.height / 12 * 7, 47, 47, "BoundUpdate(200)", 0, 1, 'boundUpdate');
+    }
+    if(game.status.isIncomeUpdate === false)
+        new Button(477, GameConst.height / 12 * 7, 47, 47, "IncomeUpdate(200)", 0, 2, 'incomeUpdate');
+    if(game.status.isResumeUpdate === false)
+        new Button(627,GameConst.height / 12 * 7,47, 47, "ResumeUpdate(200)", 0, 3, 'resumeUpdate');
+    ctx.fillStyle = "#ffd956";
+    ctx.font = (GameConst.width * GameConst.scale * 0.01).toString() +"px sans-serif";
+    ctx.fillText("血上限升级(200)", 302 * GameConst.scale, GameConst.height / 24 * 13 * GameConst.scale);
+    ctx.fillText("收入升级(200)", 452 * GameConst.scale, GameConst.height / 24 * 13 * GameConst.scale);
+    ctx.fillText("回复升级(200)", 602 * GameConst.scale, GameConst.height / 24 * 13 * GameConst.scale);
+    ctx.fillStyle = "#ffd956";
+    ctx.font = parseInt(GameConst.width * GameConst.scale * 0.04).toString() +"px sans-serif";
+    ctx.fillText("Your Income : " + game.income, GameConst.width * 0.3 * GameConst.scale, GameConst.height / 12 * 2 * GameConst.scale);
+    new Button(GameConst.width / 12 * 5, GameConst.height / 12 * 10, 180, 80, "continue", 0, 4, 'continue');
+    drawButtons();
+
+}
+function clearEnd() {
+    let can = document.getElementById('end');
+    let ctx = can.getContext('2d');
+
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
+}
+
+function drawBackground() {
+    let can = document.getElementById('background');
+    let ctx = can.getContext('2d');
+
+    can.width = GameConst.width * GameConst.scale;
+    can.height = GameConst.height * GameConst.scale;
+    can.style.left = GameConst.moveX.toString() + 'px';
+    can.style.top = GameConst.moveY.toString() + 'px';
+
+    ctx.drawImage(GameConst.backgroundImg, 0, 0, GameConst.width *GameConst.scale, GameConst.height * GameConst.scale);
+
+}
+
+
+//适应窗口大小
+function resize() {
+    let width = Math.min(document.body.clientWidth * 0.9, document.body.clientHeight * 0.8 / GameConst.hwRate);
+    GameConst.scale = width / GameConst.width;
+    if(GameConst.scale < GameConst.minScale)
+        GameConst.scale = GameConst.minScale;
+
+    GameConst.moveX = (document.body.clientWidth - GameConst.width * GameConst.scale) / 2;
+    if(GameConst.moveX < 0)
+        GameConst.moveX = 0;
+    GameConst.moveY = (document.body.clientHeight - GameConst.height * 1.2 * GameConst.scale) / 2;
+    if(GameConst.moveY < 0)
+        GameConst.moveY = 0;
+
+
+    drawBalls();
+    drawBullets();
+    drawAttackers();
+    drawDefenders();
+    clearThunders();
+    drawButtons();
+    drawBackground();
+    if(game.beginFlag === 0)
+        drawBegin();
+    else if(game.beginFlag === 2)
+        drawEnd();
+
+}
+window.onresize = resize;
+
+
+//计时器事件
+function update() {
+    game.levelCount++;
+    let isSucceed = true;
+    let isFalse = true;
+    if(game.levelCount % parseInt(120 / game.levelSpeed) === 0) {
+        for(let ball of game.balls) {
+            ball.update();
+            if(ball.team === 1)
+                isFalse = false;
+            if(ball.team !== 1 && ball.team !== 0)
+                isSucceed = false;
+        }
+        if(game.beginFlag === 1 && isSucceed === true)
+        {
+            game.success = true;
+            game.level += 1;
+            if(game.level > GameConst.maxGameLevel)
+                game.level = 1;
+            game.income += 100 * (1 + game.status.isIncomeUpdate);
+            drawEnd();
+            game.iteratorId = window.requestAnimationFrame(update);
+            return;
+        }
+        if(game.beginFlag === 1 && isFalse === true)
+        {
+            game.success = false;
+            drawEnd();
+            game.iteratorId = window.requestAnimationFrame(update);
+            return;
+        }
+        drawBalls();
+
+    }
+
+    if(game.levelCount % parseInt(300 / game.levelSpeed) === 0) {
+        for(let ball of game.balls) {
+            ball.autoAttack();
+        }
+
+
+    }
+    if(game.levelCount % parseInt(80 / game.levelSpeed) === 0) {
+        for(let attacker of game.attackers) {
+            attacker.update();
+        }
+        for(let defender of game.defenders) {
+            defender.update();
+        }
+        drawAttackers();
+        drawDefenders();
+    }
+    else if(game.levelCount % parseInt(80 / game.levelSpeed) === 2) {
+        clearThunders();
+    }
+    for(let i = 0; i < game.levelSpeed; i++) {
+        for(let bullet of game.bullets) {
+            bullet.update();
+            drawBullets();
+        }
+    }
+
+    game.iteratorId = window.requestAnimationFrame(update);
+
+}
 game.iteratorId = requestAnimationFrame(update);
 
+
+//鼠标事件
 document.onmousedown = function(event){
     let pre = event || window.event;
     let e = {
@@ -1038,73 +1170,7 @@ document.onmouseup = function(event){
     }
 };
 
-(function gameInit() {
-    GameConst.backgroundImg.src = "res/bg.jpg";
-    GameConst.backgroundImg.onload = resize;
-
-    GameConst.buttonImg.title = new Image();
-    GameConst.buttonImg.title.src = 'res/title.png';
-    GameConst.buttonImg.up = new Image();
-    GameConst.buttonImg.up.src = 'res/up.png';
-    GameConst.buttonImg.down = new Image();
-    GameConst.buttonImg.down.src = 'res/down.png';
-    GameConst.buttonImg.play = new Image();
-    GameConst.buttonImg.play.src = 'res/play.png';
-    GameConst.buttonImg.menu = new Image();
-    GameConst.buttonImg.menu.src = 'res/menu.png';
-    GameConst.buttonImg.speed1 = new Image();
-    GameConst.buttonImg.speed1.src = 'res/speed1.png';
-    GameConst.buttonImg.speed2 = new Image();
-    GameConst.buttonImg.speed2.src = 'res/speed2.png';
-    GameConst.buttonImg.speed3 = new Image();
-    GameConst.buttonImg.speed3.src = 'res/speed3.png';
-    GameConst.buttonImg.speed1Chosen = new Image();
-    GameConst.buttonImg.speed1Chosen.src = 'res/speed1Chosen.png';
-    GameConst.buttonImg.speed2Chosen = new Image();
-    GameConst.buttonImg.speed2Chosen.src = 'res/speed2Chosen.png';
-    GameConst.buttonImg.speed3Chosen = new Image();
-    GameConst.buttonImg.speed3Chosen.src = 'res/speed3Chosen.png';
-    GameConst.buttonImg.noAI = new Image();
-    GameConst.buttonImg.noAI.src = 'res/noAI.png';
-    GameConst.buttonImg.noAIChosen = new Image();
-    GameConst.buttonImg.noAIChosen.src = 'res/noAIChosen.png';
-    GameConst.buttonImg.defence = new Image();
-    GameConst.buttonImg.defence.src = 'res/defence.png';
-    GameConst.buttonImg.defenceChosen = new Image();
-    GameConst.buttonImg.defenceChosen.src = 'res/defenceChosen.png';
-    GameConst.buttonImg.aggressive = new Image();
-    GameConst.buttonImg.aggressive.src = 'res/aggressive.png';
-    GameConst.buttonImg.aggressiveChosen = new Image();
-    GameConst.buttonImg.aggressiveChosen.src = 'res/aggressiveChosen.png';
-    GameConst.buttonImg.replay = new Image();
-    GameConst.buttonImg.replay.src = 'res/replay.png';
-    GameConst.buttonImg.continue = new Image();
-    GameConst.buttonImg.continue.src = 'res/continue.png';
-    GameConst.buttonImg.applyToAll = new Image();
-    GameConst.buttonImg.applyToAll.src = 'res/applyToAll.png';
-    GameConst.buttonImg.levelUp = new Image();
-    GameConst.buttonImg.levelUp.src = 'res/levelUp.png';
-    GameConst.buttonImg.incomeUpdate = new Image();
-    GameConst.buttonImg.incomeUpdate.src = 'res/incomeUpdate.png';
-    GameConst.buttonImg.resumeUpdate = new Image();
-    GameConst.buttonImg.resumeUpdate.src = 'res/resumeUpdate.png';
-    GameConst.buttonImg.boundUpdate = new Image();
-    GameConst.buttonImg.boundUpdate.src = 'res/boundUpdate.png';
-
-    GameConst.buttonImg.bg_footer = new Image();
-    GameConst.buttonImg.bg_footer.src = 'res/bg_footer.png';
-    GameConst.buttonImg.title.onload = function () {
-        let can = document.getElementById('begin');
-        let ctx = can.getContext('2d');
-        ctx.drawImage(GameConst.buttonImg.title, GameConst.width * 0.3 * GameConst.scale, GameConst.height / 12 * 2 * GameConst.scale, 334 * GameConst.scale, 90 * GameConst.scale);
-
-    };
-    GameConst.buttonImg.play.onload = drawButtons;
-
-
-
-})();
-
+//关卡初始化
 function levelInit(level) {
     game.balls = [];
     game.bullets = [];
@@ -1390,131 +1456,72 @@ function levelInit(level) {
     }
 }
 
-function drawBegin() {
-    game.balls = [];
-    game.bullets = [];
-    game.attackers = [];
-    game.defenders = [];
-    game.levelSpeed = 1;
-    game.clickPicker = 0;
-    game.clickBall = null;
-    game.beginFlag = 0;
-    game.buttons = [];
-    game.success = false;
-    game.levelCount = 0;
+//游戏初始化
+(function gameInit() {
+    GameConst.backgroundImg.src = "res/bg.jpg";
+    GameConst.backgroundImg.onload = resize;
 
-    drawButtons();
-    clearArrow();
-    drawAttackers();
-    drawBalls();
-    drawBullets();
-    drawDefenders();
-    clearThunders();
-    clearBegin();
-    clearEnd();
-    let can = document.getElementById('begin');
-    let ctx = can.getContext('2d');
+    GameConst.buttonImg.title = new Image();
+    GameConst.buttonImg.title.src = 'res/title.png';
+    GameConst.buttonImg.up = new Image();
+    GameConst.buttonImg.up.src = 'res/up.png';
+    GameConst.buttonImg.down = new Image();
+    GameConst.buttonImg.down.src = 'res/down.png';
+    GameConst.buttonImg.play = new Image();
+    GameConst.buttonImg.play.src = 'res/play.png';
+    GameConst.buttonImg.menu = new Image();
+    GameConst.buttonImg.menu.src = 'res/menu.png';
+    GameConst.buttonImg.speed1 = new Image();
+    GameConst.buttonImg.speed1.src = 'res/speed1.png';
+    GameConst.buttonImg.speed2 = new Image();
+    GameConst.buttonImg.speed2.src = 'res/speed2.png';
+    GameConst.buttonImg.speed3 = new Image();
+    GameConst.buttonImg.speed3.src = 'res/speed3.png';
+    GameConst.buttonImg.speed1Chosen = new Image();
+    GameConst.buttonImg.speed1Chosen.src = 'res/speed1Chosen.png';
+    GameConst.buttonImg.speed2Chosen = new Image();
+    GameConst.buttonImg.speed2Chosen.src = 'res/speed2Chosen.png';
+    GameConst.buttonImg.speed3Chosen = new Image();
+    GameConst.buttonImg.speed3Chosen.src = 'res/speed3Chosen.png';
+    GameConst.buttonImg.noAI = new Image();
+    GameConst.buttonImg.noAI.src = 'res/noAI.png';
+    GameConst.buttonImg.noAIChosen = new Image();
+    GameConst.buttonImg.noAIChosen.src = 'res/noAIChosen.png';
+    GameConst.buttonImg.defence = new Image();
+    GameConst.buttonImg.defence.src = 'res/defence.png';
+    GameConst.buttonImg.defenceChosen = new Image();
+    GameConst.buttonImg.defenceChosen.src = 'res/defenceChosen.png';
+    GameConst.buttonImg.aggressive = new Image();
+    GameConst.buttonImg.aggressive.src = 'res/aggressive.png';
+    GameConst.buttonImg.aggressiveChosen = new Image();
+    GameConst.buttonImg.aggressiveChosen.src = 'res/aggressiveChosen.png';
+    GameConst.buttonImg.replay = new Image();
+    GameConst.buttonImg.replay.src = 'res/replay.png';
+    GameConst.buttonImg.continue = new Image();
+    GameConst.buttonImg.continue.src = 'res/continue.png';
+    GameConst.buttonImg.applyToAll = new Image();
+    GameConst.buttonImg.applyToAll.src = 'res/applyToAll.png';
+    GameConst.buttonImg.levelUp = new Image();
+    GameConst.buttonImg.levelUp.src = 'res/levelUp.png';
+    GameConst.buttonImg.incomeUpdate = new Image();
+    GameConst.buttonImg.incomeUpdate.src = 'res/incomeUpdate.png';
+    GameConst.buttonImg.resumeUpdate = new Image();
+    GameConst.buttonImg.resumeUpdate.src = 'res/resumeUpdate.png';
+    GameConst.buttonImg.boundUpdate = new Image();
+    GameConst.buttonImg.boundUpdate.src = 'res/boundUpdate.png';
 
-    can.width = GameConst.width * GameConst.scale;
-    can.height = GameConst.height * GameConst.scale;
-    can.style.left = GameConst.moveX.toString() + 'px';
-    can.style.top = GameConst.moveY.toString() + 'px';
-    ctx.drawImage(GameConst.buttonImg.title, GameConst.width * 0.3 * GameConst.scale, GameConst.height / 12 * 2 * GameConst.scale, 334 * GameConst.scale, 90 * GameConst.scale);
+    GameConst.buttonImg.bg_footer = new Image();
+    GameConst.buttonImg.bg_footer.src = 'res/bg_footer.png';
+    GameConst.buttonImg.title.onload = function () {
+        let can = document.getElementById('begin');
+        let ctx = can.getContext('2d');
+        ctx.drawImage(GameConst.buttonImg.title, GameConst.width * 0.3 * GameConst.scale, GameConst.height / 12 * 2 * GameConst.scale, 334 * GameConst.scale, 90 * GameConst.scale);
 
-    ctx.fillStyle = "#ffd956";
-    ctx.font = parseInt(GameConst.width * GameConst.scale * 0.03).toString() +"px sans-serif";
-    ctx.fillText("Choose Level :  "+game.level, GameConst.scale * GameConst.width / 3, GameConst.scale * GameConst.height / 3 * 2);
-    ctx.font = parseInt(GameConst.width * GameConst.scale * 0.015).toString() +"px sans-serif";
-    ctx.fillText(" 可能帮到你的小技巧：", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.45);
-    ctx.fillText("* 更大的球有着更高的血量上限", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.5);
-    ctx.fillText("和更快的恢复速度", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.53);
-    ctx.fillText("* 对于野生球可以慢些占领", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.58);
-    ctx.fillText("* 攻击器会影响周围的球", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.63);
-    ctx.fillText("* 防御器会影响周围的子弹", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.68);
-    ctx.fillText("* 可以升级自己的球", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.73);
-    ctx.fillText("* 可以对自己的球设置简单AI", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.78);
-    ctx.fillText("* 可以提高游戏速度", GameConst.scale * GameConst.width * 0.75, GameConst.scale * GameConst.height * 0.83);
-    new Button(GameConst.width * 0.52, GameConst.height * 0.56, GameConst.width / 12, GameConst.height / 24, "level up", -1, 1, 'up');
-    new Button(GameConst.width * 0.52, GameConst.height * 0.7, GameConst.width / 12, GameConst.height / 24, "level down", -1, 2, 'down');
-    new Button(GameConst.width / 12 * 5, GameConst.height / 12 * 9, GameConst.width / 6, GameConst.height / 18, "start", -1, 3, 'play');
-    drawButtons();
-}
-function clearBegin() {
-    let can = document.getElementById('begin');
-    let ctx = can.getContext('2d');
-
-    can.width = GameConst.width * GameConst.scale;
-    can.height = GameConst.height * GameConst.scale;
-}
-function drawBackground() {
-    let can = document.getElementById('background');
-    let ctx = can.getContext('2d');
-
-    can.width = GameConst.width * GameConst.scale;
-    can.height = GameConst.height * GameConst.scale;
-    can.style.left = GameConst.moveX.toString() + 'px';
-    can.style.top = GameConst.moveY.toString() + 'px';
-
-    ctx.drawImage(GameConst.backgroundImg, 0, 0, GameConst.width *GameConst.scale, GameConst.height * GameConst.scale);
-
-}
-function clearBackground() {
-    let can = document.getElementById('background');
-    let ctx = can.getContext('2d');
-
-    can.width = GameConst.width * GameConst.scale;
-    can.height = GameConst.height * GameConst.scale;
-}
-function drawEnd() {
-    game.balls = [];
-    game.bullets = [];
-    game.attackers = [];
-    game.defenders = [];
-    game.levelSpeed = 1;
-    game.clickPicker = 0;
-    game.clickBall = null;
-    game.beginFlag = 2;
-    game.buttons = [];
-    game.levelCount = 0;
-    drawButtons();
-    clearArrow();
-    drawAttackers();
-    drawBalls();
-    drawBullets();
-    drawDefenders();
-    clearThunders();
-    let can = document.getElementById('end');
-    let ctx = can.getContext('2d');
-
-    can.width = GameConst.width * GameConst.scale;
-    can.height = GameConst.height * GameConst.scale;
+    };
+    GameConst.buttonImg.play.onload = drawButtons;
 
 
-    can.style.left = GameConst.moveX.toString() + 'px';
-    can.style.top = GameConst.moveY.toString() + 'px';
-    if(game.status.isBoundUpdate === false) {
-        new Button(327, GameConst.height / 12 * 7, 47, 47, "BoundUpdate(200)", 0, 1, 'boundUpdate');
-    }
-    if(game.status.isIncomeUpdate === false)
-        new Button(477, GameConst.height / 12 * 7, 47, 47, "IncomeUpdate(200)", 0, 2, 'incomeUpdate');
-    if(game.status.isResumeUpdate === false)
-        new Button(627,GameConst.height / 12 * 7,47, 47, "ResumeUpdate(200)", 0, 3, 'resumeUpdate');
-    ctx.fillStyle = "#ffd956";
-    ctx.font = (GameConst.width * GameConst.scale * 0.01).toString() +"px sans-serif";
-    ctx.fillText("血上限升级(200)", 302 * GameConst.scale, GameConst.height / 24 * 13 * GameConst.scale);
-    ctx.fillText("收入升级(200)", 452 * GameConst.scale, GameConst.height / 24 * 13 * GameConst.scale);
-    ctx.fillText("回复升级(200)", 602 * GameConst.scale, GameConst.height / 24 * 13 * GameConst.scale);
-    ctx.fillStyle = "#ffd956";
-    ctx.font = parseInt(GameConst.width * GameConst.scale * 0.04).toString() +"px sans-serif";
-    ctx.fillText("Your Income : " + game.income, GameConst.width * 0.3 * GameConst.scale, GameConst.height / 12 * 2 * GameConst.scale);
-    new Button(GameConst.width / 12 * 5, GameConst.height / 12 * 10, 180, 80, "continue", 0, 4, 'continue');
-    drawButtons();
 
-}
-function clearEnd() {
-    let can = document.getElementById('end');
-    let ctx = can.getContext('2d');
+})();
 
-    can.width = GameConst.width * GameConst.scale;
-    can.height = GameConst.height * GameConst.scale;
-}
+
